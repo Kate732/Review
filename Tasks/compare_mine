@@ -1,0 +1,16 @@
+// Compare two dictionaries
+
+const compare = (firstArr, arrToCompare) => {
+    let keysFromFirst = Object.keys(firstArr);
+    let keysFromSecond = Object.keys(arrToCompare);
+    if (keysFromFirst.join('-') !== keysFromSecond.join('-')) return false;
+    let res = true;
+    for (key of keysFromFirst) {
+        if (firstArr[key] === arrToCompare[key]) res = res && true;
+        else res = res && false;
+    }
+    return res;
+}
+
+const result = compare({ a: 1, c: 'hello' }, { a: 1, c: 'hello' });
+console.log(result);
